@@ -1,5 +1,4 @@
 import React from "react";
-import { TouchableOpacity } from "react-native";
 import { RFValue } from "react-native-responsive-fontsize";
 
 //SVGs
@@ -7,7 +6,7 @@ import LogoSvg from "../../assets/logo.svg";
 
 //Components
 import { Backward } from "../../components/Backward";
-import { Button } from "../../components/Form/Button";
+import { FormButton } from "../../components/Form/FormButton";
 import { Input } from "../../components/Form/Input";
 import { FormFooter } from "../../components/Form/FormFooter";
 import { 
@@ -21,11 +20,11 @@ import {
     FormHeaderSubtitle
 } from "./styles";
 
-export function ForgetPass(){
+export function ForgetPass({navigation}){
     return(
         <Container>
             <Header>
-                <Backward content='arrow-left'/>
+                <Backward content='arrow-left' onPress={() => navigation.goBack()} />
                 <Logo><LogoSvg width={RFValue(80)} /></Logo>
             </Header>
 
@@ -37,7 +36,7 @@ export function ForgetPass(){
 
                 <Form>
                     <Input placeholder="E-mail ou telefone" />
-                    <Button content="ENVIAR AGORA" />
+                    <FormButton content="ENVIAR AGORA" />
                     <FormFooter text="Ainda com dificuldades?" coloredText="Fale com o suporte"/>
                 </Form>
 

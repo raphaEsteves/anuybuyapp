@@ -16,8 +16,7 @@ export const FormFooterTitle = styled.Text`
     font-size: ${RFValue(12)}px;
 `;
 
-export const FooterRegister = styled(TouchableOpacity)`
-    
+export const FooterRegister = styled(TouchableOpacity)`  
 `;
 
 export const ColoredText = styled.Text`

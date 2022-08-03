@@ -1,22 +1,15 @@
 import React from "react";
-import { TouchableOpacity } from "react-native";
+import { TouchableOpacityProps } from "react-native";
+import{ Touch, Icon } from "./styles";
 
-import{
-    Container,
-    Touch,
-    Icon
-} from "./styles";
-
-interface Props extends TouchableOpacity{
+interface Props extends TouchableOpacityProps{
     content: string;
 }
 
-export function Backward( { content }){
+export function Backward( {content,  ...rest} : Props){
     return(
-        <Container>
-            <Touch>
-                    <Icon name= { content }/>
-            </Touch>
-        </Container>
+        <Touch  { ...rest } >
+            <Icon name= { content }/>
+        </Touch>
     )
 }

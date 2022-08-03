@@ -20,7 +20,7 @@ import {
     Line
  } from "./styles";
 
-export function Welcome(){
+export function Welcome({navigation}){
     return(
         <Container>
             <Header>
@@ -45,7 +45,7 @@ export function Welcome(){
 
             <Footer>
                 <FooterText>
-                    <GetStarted>
+                    <GetStarted onPress={() => navigation.navigate('SignIn')}>
                         <Text2>Vamos lá!</Text2>
                     </GetStarted>
                 </FooterText>

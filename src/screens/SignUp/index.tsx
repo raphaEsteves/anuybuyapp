@@ -7,7 +7,7 @@ import LogoSvg from "../../assets/logo.svg";
 //Components
 import { Backward } from "../../components/Backward";
 import { Input } from "../../components/Form/Input";
-import { Button } from "../../components/Form/Button";
+import { FormButton } from "../../components/Form/FormButton";
 import { FormFooter } from "../../components/Form/FormFooter";
 
 import {
@@ -24,11 +24,11 @@ import {
 } from "./styles";
 
 
-export function SignUp() {
+export function SignUp({navigation}) {
     return (
         <Container>
             <Header>
-                <Backward content="arrow-left" />
+                <Backward content="arrow-left" onPress={() => navigation.goBack()} />
                 <Logo>
                     <LogoSvg width={RFValue(80)} />
                 </Logo>
@@ -52,7 +52,7 @@ export function SignUp() {
                         <Title>Telefone</Title>
                         <Input />
                     </Box>
-                    <Button content="INSCREVA-SE" />
+                    <FormButton content="INSCREVA-SE" />
                 </Form>
                 <FormFooter text="Já possui uma conta?" coloredText="REGISTRE-SE" />
             </WrapperForm>

@@ -1,4 +1,5 @@
 import React from "react";
+import { TouchableOpacityProps } from "react-native";
 
 
 import {
@@ -8,16 +9,16 @@ import {
     ColoredText
 } from "./styles";
 
-interface Props extends Text{
-    text: string;
+interface Props extends TouchableOpacityProps{
     coloredText: string;
+    title: string;
 }
 
-export function FormFooter( {text, coloredText}) {
+export function FormFooter( {title, coloredText, ...rest} : Props) {
     return (
-        <Container>
-            <FormFooterTitle>{text} </FormFooterTitle>
-            <FooterRegister>
+        <Container >
+            <FormFooterTitle>{title} </FormFooterTitle>
+            <FooterRegister { ...rest }>
                 <ColoredText>{coloredText}</ColoredText>
             </FooterRegister>
         </Container>

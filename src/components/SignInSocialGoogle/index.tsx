@@ -16,7 +16,7 @@ interface Props extends TouchableOpacity{
     content: string;
 }
 
-export function SignInSocialGoogle( { content }){
+export function SignInSocialGoogle( { content, ...rest }){
     return(
         <Container>
             <WrapperImage>
